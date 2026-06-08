@@ -105,8 +105,8 @@
               <div class="tjanst-ikon">◇</div>
               <h3>Privatpersoner</h3>
               <p>
-                Portfolio, CV-sida eller personlig blogg – jag hjälper dig att
-                synas på nätet på dina villkor.
+                Portfolio, CV-sida etc. – jag hjälper dig att synas på nätet på
+                dina villkor.
               </p>
             </div>
             <div class="tjanst-kort">
@@ -137,35 +137,48 @@
             <h2>Portfolio</h2>
           </div>
           <div class="portfolio-grid">
-            <div class="portfolio-kort">
-              <div class="portfolio-bild" style="background: #e8f0fb">
-                <span>Skärmdump</span>
+            <a
+              class="portfolio-kort"
+              href="https://suomitupa.se/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="portfolio-bild">
+                <img
+                  src="image/SuomitupaPres.png"
+                  alt="Suomitupahemsida och mobilvy"
+                />
               </div>
               <div class="portfolio-info">
                 <h3>Suomitupa AB</h3>
-                <p>
-                  Tvåspråkig webbplats för finskt livsmedelsföretag med
-                  butiksinformation och öppettider.
-                </p>
+                <p>Finskt livsmedelsföretag, tvåspråkig hemsida, SEO</p>
                 <span class="portfolio-tag">HTML</span>
                 <span class="portfolio-tag">CSS</span>
+                <span class="portfolio-tag">JavaScript</span>
               </div>
-            </div>
-            <div class="portfolio-kort">
-              <div class="portfolio-bild" style="background: #fdf3e8">
-                <span>Skärmdump</span>
+            </a>
+            <a
+              class="portfolio-kort"
+              href="https://msthlm.se/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="portfolio-bild">
+                <img
+                  src="image/MSTHLMPres.png"
+                  alt="M STHLM AB Redovisnings hemsida och mobilvy"
+                />
               </div>
               <div class="portfolio-info">
-                <h3>Projekt 2</h3>
-                <p>
-                  Kort beskrivning av projektet och vad du löste för kunden.
-                </p>
+                <h3>M STHLM AB - Redovisning</h3>
+                <p>Redovisningsbyrå, hemsida, SEO, varumärke</p>
                 <span class="portfolio-tag">HTML</span>
                 <span class="portfolio-tag">CSS</span>
+                <span class="portfolio-tag">JavaScript</span>
               </div>
-            </div>
-            <div class="portfolio-kort">
-              <div class="portfolio-bild" style="background: #edf8f0">
+            </a>
+            <!-- <div class="portfolio-kort">
+              <div class="portfolio-bild">
                 <span>Skärmdump</span>
               </div>
               <div class="portfolio-info">
@@ -176,7 +189,7 @@
                 <span class="portfolio-tag">HTML</span>
                 <span class="portfolio-tag">CSS</span>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -233,7 +246,7 @@
         </div>
       </section>
 
-      <!-- REFERENCER -->
+      <!-- REFERENCER
       <section class="section" id="referenser">
         <div class="container">
           <div class="section-header">
@@ -257,24 +270,95 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- KONTAKT -->
       <section class="section section-alt" id="kontakt">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">Låt oss prata</span>
-            <h2>Kontakta mig</h2>
+            <span class="section-label">Kontakta mig</span>
+            <h2>Har du en idé som behöver förverkligas?</h2>
             <p>
-              Har du ett projekt i tankarna? Hör av dig så tar vi en kaffe och
-              pratar om hur jag kan hjälpa dig.
+              Jag lyssnar gärna – kontakta mig för en kostnadsfri konsultation.
             </p>
           </div>
           <div class="kontakt-box">
-            <div class="kontakt-info">
-              <p>📧 <a href="mailto:din@email.se">din@email.se</a></p>
-              <p>📱 <a href="tel:+46700000000">070-000 00 00</a></p>
-            </div>
+            <div class="kontakt-info"></div>
+            <section class="contact-section">
+              <div class="form-card">
+                <form id="kontakt-form">
+                  <div class="field">
+                    <label for="foretag">Företagsnamn</label>
+                    <input type="text" id="foretag" name="foretag" />
+                  </div>
+
+                  <div class="field">
+                    <label for="namn">Namn <span class="req">*</span></label>
+                    <input type="text" id="namn" name="namn" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="orgnr"
+                      >Organisationsnummer / Personnummer</label
+                    >
+                    <input
+                      type="text"
+                      id="orgnr"
+                      name="orgnr"
+                      placeholder="556XXX-XXXX"
+                    />
+                  </div>
+
+                  <div class="field">
+                    <label for="telefon"
+                      >Telefon <span class="req">*</span></label
+                    >
+                    <input type="tel" id="telefon" name="telefon" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="epost">E-post <span class="req">*</span></label>
+                    <input type="email" id="epost" name="epost" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="amne">Ämne <span class="req">*</span></label>
+                    <input type="text" id="amne" name="amne" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="meddelande"
+                      >Meddelande <span class="req">*</span></label
+                    >
+                    <textarea
+                      id="meddelande"
+                      name="meddelande"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <p id="form-success" class="form-success">
+                    ✓ Tack! Ditt mailprogram öppnas nu med ditt meddelande
+                    färdigt att skicka.
+                  </p>
+
+                  <input
+                    type="checkbox"
+                    name="integritetspolicy"
+                    id="integritetspolicy"
+                    required
+                  />
+                  <label for="integritetspolicy">
+                    Klicka i rutan om du godkänner vår
+                    <a href="./integritetspolicy.html" target="_blank"
+                      >integritetspolicy</a
+                    >
+                  </label>
+
+                  <button type="submit" class="btn-submit">Skicka</button>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </section>
