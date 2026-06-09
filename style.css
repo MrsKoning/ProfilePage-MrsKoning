@@ -457,43 +457,48 @@ a {
    TJÄNSTER
    =================================== */
 .tjanster-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .tjanst-kort {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem 1.5rem;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
   transition:
     transform var(--transition),
     box-shadow var(--transition);
 }
 
 .tjanst-kort:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
 
 .tjanst-ikon {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--accent);
-  margin-bottom: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .tjanst-kort h3 {
   font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--ink);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .tjanst-kort p {
   font-size: 0.9rem;
   color: var(--ink-mid);
   line-height: 1.7;
+  margin: 0;
 }
 
 /* ===================================
@@ -573,7 +578,7 @@ a.portfolio-kort {
 
 /* ===================================
    PRISER
-   =================================== */
+   =================================== 
 .priser-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
