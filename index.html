@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eva Maria Köning – Frontend, UX/UI-design</title>
+    <title>Eva Maria Köning – Frontendutveckling, UX/UI-design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +24,7 @@
             <li><a href="#om">Om mig</a></li>
             <li><a href="#tjanster">Tjänster</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <!-- <li><a href="#priser">Priser</a></li> -->
+            <li><a href="#faq">Vanliga frågor</a></li>
             <li><a href="#kontakt" class="nav-cta">Kontakta mig</a></li>
           </ul>
         </nav>
@@ -236,6 +236,61 @@
                 som möjligt, och att du möter gällande lagkrav.
               </p>
             </div>
+            <div class="tjanst-kort">
+              <div class="tjanst-ikon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M2 7l10 7 10-7" />
+                </svg>
+              </div>
+              <h3>E-postadresser</h3>
+              <p>
+                En professionell e-postadress som
+                <em>info@dittföretag.se</em> stärker ditt varumärke och skapar
+                förtroende. Jag hjälper dig sätta upp det enkelt och smidigt –
+                som en tilläggstjänst till din hemsida.
+              </p>
+            </div>
+            <div class="tjanst-kort">
+              <div class="tjanst-ikon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"
+                  />
+                </svg>
+              </div>
+              <h3>Domännamn <br />& publicering</h3>
+              <p>
+                Jag hjälper dig registrera rätt domännamn och ser till att allt
+                är upplagt i ditt namn – du äger det fullt ut. Jag rekommenderar
+                <a
+                  href="https://www.loopia.se/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Loopia</a
+                >
+                för svenska domäner, men valet är alltid ditt.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -255,9 +310,14 @@
                 <p>
                   Jag ställer de frågor som behövs för att förstå din
                   verksamhet, dina mål och din målgrupp. Ingen lång brief eller
-                  komplicerat formulär – bara ett enkelt samtal där vi reder ut
-                  vad du behöver och vad som passar din budget.
+                  komplicerat formulär – bara ett enkelt samtal.
                 </p>
+                <ul class="process-lista">
+                  <li>Vad gör ditt företag unikt?</li>
+                  <li>Vilka är dina kunder och vad söker de?</li>
+                  <li>Hur vill du uppfattas på nätet?</li>
+                  <li>Vilka funktioner behöver sidan ha?</li>
+                </ul>
               </div>
             </div>
 
@@ -289,7 +349,7 @@
       </section>
 
       <!-- PORTFOLIO -->
-      <section class="section" id="portfolio">
+      <section class="section section-alt" id="portfolio">
         <div class="container">
           <div class="section-header">
             <span class="section-label">Tidigare arbeten</span>
@@ -336,79 +396,178 @@
                 <span class="portfolio-tag">JavaScript</span>
               </div>
             </a>
-            <!-- <div class="portfolio-kort">
-              <div class="portfolio-bild">
-                <span>Skärmdump</span>
-              </div>
-              <div class="portfolio-info">
-                <h3>Projekt 3</h3>
-                <p>
-                  Kort beskrivning av projektet och vad du löste för kunden.
-                </p>
-                <span class="portfolio-tag">HTML</span>
-                <span class="portfolio-tag">CSS</span>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
 
-      <!-- PRISER
-      <section class="section section-alt" id="priser">
+      <!-- VANLIGA FRÅGOR -->
+      <section class="section" id="faq">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">Investering</span>
-            <h2>Priser</h2>
+            <span class="section-label">Vanliga frågor</span>
+            <h2>Har du funderingar?</h2>
             <p>
-              Jag erbjuder flera nivåer och prisklasser, från stilrena
-              grundlösningar till avancerade, skräddarsydda webbplatser. Alla
-              priser är exklusive moms. Kontakta mig för offert på större
-              projekt.
+              Här har jag samlat de frågor jag får mest – klicka på en fråga för
+              att läsa svaret.
             </p>
           </div>
-          <div class="priser-grid">
-            <div class="pris-kort">
-              <h3>Bas</h3>
-              <div class="pris">från <strong>5 000 kr</strong></div>
-              <ul class="pris-lista">
-                <li>✓ Ensidig webbplats</li>
-                <li>✓ Responsiv design</li>
-                <li>✓ Kontaktinformation</li>
-                <li>✓ Grundläggande SEO</li>
-              </ul>
-              <a href="#kontakt" class="btn btn-outline">Kom igång</a>
-            </div>
-            <div class="pris-kort pris-featured">
-              <div class="pris-badge">Populär</div>
-              <h3>Standard</h3>
-              <div class="pris">från <strong>10 000 kr</strong></div>
-              <ul class="pris-lista">
-                <li>✓ Flersidig webbplats</li>
-                <li>✓ Responsiv design</li>
-                <li>✓ Kontaktformulär</li>
-                <li>✓ SEO-optimering</li>
-                <li>✓ Tillgänglighetsanpassning (WCAG)</li>
-                <li>✓ 1 månads support</li>
-              </ul>
-              <a href="#kontakt" class="btn btn-primary">Kom igång</a>
-            </div>
-            <div class="pris-kort">
-              <h3>Premium</h3>
-              <div class="pris">från <strong>20 000 kr</strong></div>
-              <ul class="pris-lista">
-                <li>✓ Skräddarsydd lösning</li>
-                <li>✓ Flerspråkigt stöd</li>
-                <li>✓ Avancerade funktioner</li>
-                <li>✓ SEO-optimering</li>
-                <li>✓ Tillgänglighetsanpassning (WCAG)</li>
-                <li>✓ 3 månaders support</li>
-              </ul>
-              <a href="#kontakt" class="btn btn-outline">Kom igång</a>
-            </div>
+          <div class="faq-lista">
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Varför syns inte min hemsida på Google?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Det tar upp till några veckor för Google att indexera en ny
+                  sida. Söker du på ditt företagsnamn brukar den dyka upp
+                  relativt snart. Att ranka på "första sidan" för
+                  branschspecifika sökord tar längre tid och byggs upp med
+                  innehåll, struktur och trafik över tid.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Är hemsidan sökmotoroptimerad?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ja. Jag bygger varje sida sökmotoroptimerad från grunden – med
+                  rätt rubrikstruktur, metatitlar, alt-texter och teknisk SEO.
+                  Jag gör alltid en enkel sökordsanalys för din bransch och ditt
+                  område innan vi sätter igång.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Skriver ni texterna på hemsidan?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Texterna är ditt ansvar – du känner din verksamhet bäst. Jag
+                  kan ge råd om struktur och formuleringar längs vägen, men
+                  copywriting som tilläggstjänst erbjuder jag inte i dagsläget.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Är hemsidan anpassad för mobil?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ja. Alla sidor jag bygger är responsiva och fungerar lika bra
+                  på mobil, surfplatta och dator.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Hur lång tid tar det att bygga hemsidan?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Det varierar beroende på projektets omfattning, men räkna med
+                  3–5 veckor från godkänd design till lansering. En stor del av
+                  tempot beror på hur snabbt vi kan bolla utkast och du kan ge
+                  feedback.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">Hur mycket kostar en hemsida?</summary>
+              <div class="faq-svar">
+                <p>
+                  Varje projekt är unikt och prissätts efter vad just din sida
+                  behöver. Jag ger alltid en offert innan vi börjar – utan
+                  förpliktelse. Det du kan räkna med är att du får en
+                  genomtänkt, skräddarsydd lösning och full koll på vad du
+                  betalar för.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Äger jag hemsidan när den är klar?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ja, fullt ut. Koden, domänen och allt innehåll är ditt. Du är
+                  aldrig låst till mig för att din sida ska fungera.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Vad behöver jag ha klart innan vi börjar?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ju mer du har – logotyp, bilder, texter – desto smidigare går
+                  projektet. Men det är inget krav att ha allt klart från dag
+                  ett. Vi går igenom vad som behövs under vårt första samtal.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Kan jag uppdatera sidan själv efter lansering?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Det beror på hur sidan är byggd. Jag erbjuder en genomgång vid
+                  lansering så att du vet hur allt fungerar. Behöver du
+                  regelbundna uppdateringar kan vi komma överens om det separat.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Kan ni hjälpa mig sätta upp e-postadresser?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ja, det kan jag hjälpa till med som en tilläggstjänst. Att
+                  sätta upp en professionell e-postadress som
+                  <em>info@dittföretag.se</em> ger ett seriösare intryck och är
+                  enklare att ordna än många tror.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-fraga">
+                Hjälper du till med domännamn?
+              </summary>
+              <div class="faq-svar">
+                <p>
+                  Ja. Jag hjälper dig registrera ett domännamn och ser till att
+                  det är upplagt i ditt namn – du äger det fullt ut och är
+                  aldrig beroende av mig för att det ska fungera. Jag brukar
+                  rekommendera
+                  <a
+                    href="https://www.loopia.se/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Loopia</a
+                  >
+                  som registrar för svenska domäner.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
-      </section> -->
-
+      </section>
       <!-- KONTAKT -->
       <section class="section section-alt" id="kontakt">
         <div class="container">
@@ -520,6 +679,16 @@
       document.querySelectorAll(".menu a").forEach((link) => {
         link.addEventListener("click", () => {
           document.getElementById("menu-toggle").checked = false;
+        });
+      });
+      // Stäng övriga FAQ-items när ett nytt öppnas
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (item.open) {
+            document.querySelectorAll(".faq-item").forEach((other) => {
+              if (other !== item) other.removeAttribute("open");
+            });
+          }
         });
       });
     </script>

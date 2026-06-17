@@ -502,6 +502,11 @@ a {
   margin: 0;
 }
 
+.tjanst-kort p a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 /* ===================================
    PROCESS
    =================================== */
@@ -550,6 +555,29 @@ a {
   color: var(--ink-mid);
   line-height: 1.8;
   max-width: 620px;
+}
+.process-lista {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.process-lista li {
+  font-size: 0.875rem;
+  color: var(--ink-mid);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.process-lista li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.5rem;
+  top: 0.35rem;
 }
 
 @media (max-width: 767px) {
@@ -639,138 +667,70 @@ a.portfolio-kort {
 }
 
 /* ===================================
-   PRISER
-   =================================== 
-.priser-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  align-items: start;
+   VANLIGA FRÅGOR
+   =================================== */
+.faq-lista {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.pris-kort {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  position: relative;
+.faq-item {
+  border-bottom: 1px solid var(--border);
 }
 
-.pris-featured {
-  background: var(--ink);
-  border-color: var(--ink);
-  transform: scale(1.03);
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
 }
 
-.pris-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-}
-
-.pris-kort h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.2rem;
-  color: var(--ink);
-  margin-bottom: 0.75rem;
-}
-
-.pris-featured h3 {
-  color: var(--white);
-}
-
-.pris {
-  font-size: 0.9rem;
-  color: var(--ink-mid);
-  margin-bottom: 1.5rem;
-}
-
-.pris-featured .pris {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.pris strong {
-  font-size: 1.5rem;
-  color: var(--ink);
-  font-family: "Playfair Display", serif;
-}
-
-.pris-featured .pris strong {
-  color: var(--accent);
-}
-
-.pris-lista {
+.faq-fraga {
   list-style: none;
-  margin-bottom: 1.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.pris-lista li {
-  font-size: 0.9rem;
-  color: var(--ink-mid);
-}
-
-.pris-featured .pris-lista li {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.pris-kort .btn-outline {
-  color: var(--ink);
-  border-color: var(--border);
-  width: 100%;
-  text-align: center;
-}
-
-.pris-kort .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.pris-featured .btn-primary {
-  width: 100%;
-  text-align: center;
-}
-
-/* ===================================
-   REFERENSER
-   =================================== 
-.ref-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.ref-kort {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  border-left: 3px solid var(--accent);
-}
-
-.ref-citat {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
   font-family: "Playfair Display", serif;
-  font-style: italic;
   font-size: 1rem;
   color: var(--ink);
-  line-height: 1.7;
-  margin-bottom: 1rem;
+  cursor: pointer;
+  gap: 1rem;
 }
 
-.ref-namn {
-  font-size: 0.85rem;
-  color: var(--ink-light);
+.faq-fraga::-webkit-details-marker {
+  display: none;
 }
 
+.faq-fraga::after {
+  content: "+";
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.faq-item[open] .faq-fraga::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] .faq-fraga {
+  color: var(--accent);
+}
+
+.faq-svar {
+  padding: 0 0 1.25rem;
+}
+
+.faq-svar p {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.8;
+}
+
+.faq-svar a {
+  color: var(--accent);
+  text-decoration: underline;
+}
 /* ===================================
    KONTAKTFORMULÄR
    =================================== */
