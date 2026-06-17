@@ -503,6 +503,67 @@ a {
 }
 
 /* ===================================
+   PROCESS
+   =================================== */
+.process-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.process-steg {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.process-steg:last-child {
+  border-bottom: none;
+}
+
+.process-nr {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 80px;
+  text-align: right;
+  letter-spacing: -0.02em;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.process-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.process-content p {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.8;
+  max-width: 620px;
+}
+
+@media (max-width: 767px) {
+  .process-steg {
+    gap: 1.25rem;
+  }
+
+  .process-nr {
+    font-size: 2.5rem;
+    width: 50px;
+  }
+}
+
+/* ===================================
    PORTFOLIO
    =================================== */
 .portfolio-grid {
