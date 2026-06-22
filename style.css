@@ -553,7 +553,7 @@ a {
   font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--accent-light);
+  color: var(--accent);
   line-height: 1;
   flex-shrink: 0;
   width: 80px;
