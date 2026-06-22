@@ -7,13 +7,13 @@
   --ink: #1a1a2e;
   --ink-mid: #4a4a6a;
   --ink-light: #8888aa;
-  --cream: #faf9f6;
+  --cream: #faf7f5;
   --white: #ffffff;
-  --accent: #c9963a;
-  --accent-light: #f5e8d0;
-  --accent-dark: #a67c28;
-  --border: #e8e4dc;
-  --bg-alt: #f3f1ec;
+  --accent: #c49a94;
+  --accent-light: #f5eeeb;
+  --accent-dark: #b08880;
+  --border: #e8e0dc;
+  --bg-alt: #f3eeec;
   --radius: 12px;
   --radius-sm: 6px;
   --shadow: 0 2px 16px rgba(26, 26, 46, 0.08);
@@ -72,20 +72,38 @@ a {
   box-shadow: 0 1px 0 var(--border);
 }
 
+/* LOGO */
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.05em;
-  transition: color var(--transition);
-  visibility: hidden;
+  display: flex;
+  align-items: center;
 }
 
-#site-header.scrolled .logo {
-  color: var(--ink);
+.logo img {
+  height: 55px;
+  width: auto;
+  transition: opacity var(--transition);
 }
 
+/* Rosa logga visas mot ljus hero */
+.logo .logo-ljus {
+  display: block;
+}
+
+/* Svart logga dold från start */
+.logo .logo-mork {
+  display: none;
+}
+
+/* Vid scroll: visa rosa, dölj svart */
+#site-header.scrolled .logo .logo-ljus {
+  display: none;
+}
+
+#site-header.scrolled .logo .logo-mork {
+  display: block;
+}
+
+/* HAMBURGER */
 #menu-toggle {
   display: none;
 }
@@ -102,6 +120,7 @@ a {
   color: var(--ink);
 }
 
+/* MENY */
 .menu ul {
   list-style: none;
   display: flex;
@@ -141,6 +160,7 @@ a {
   background: var(--accent-dark) !important;
 }
 
+/* MOBIL */
 @media (max-width: 767px) {
   .menu-icon {
     display: block;
@@ -830,6 +850,7 @@ label[for="integritetspolicy"] a {
   font-size: 0.9rem;
   color: green;
   margin-bottom: 1rem;
+  display: none;
 }
 
 /* ===================================
