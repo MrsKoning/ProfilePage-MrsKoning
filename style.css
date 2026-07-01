@@ -129,8 +129,8 @@ a {
 }
 
 .menu a {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.03em;
   transition: color var(--transition);
@@ -149,7 +149,7 @@ a {
 }
 
 .nav-cta {
-  background: var(--accent) !important;
+  background: var(--accent-dark) !important;
   color: var(--white) !important;
   padding: 0.5rem 1.25rem !important;
   border-radius: var(--radius-sm) !important;
@@ -157,7 +157,7 @@ a {
 }
 
 .nav-cta:hover {
-  background: var(--accent-dark) !important;
+  background: var(--accent) !important;
 }
 
 /* MOBIL */
@@ -369,10 +369,10 @@ a {
 
 .section-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-bottom: 0.75rem;
 }
 
