@@ -26,6 +26,9 @@ document
         "Telefon: " +
         telefon +
         "\n" +
+        "Ämne: " +
+        amne +
+        "\n" +
         "Meddelande:\n" +
         meddelande,
     );
