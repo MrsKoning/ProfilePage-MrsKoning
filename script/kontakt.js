@@ -7,7 +7,6 @@ document
     const namn = document.getElementById("namn").value.trim();
     const orgnr = document.getElementById("orgnr").value.trim();
     const telefon = document.getElementById("telefon").value.trim();
-    const epost = document.getElementById("epost").value.trim();
     const amne = document.getElementById("amne").value.trim();
     const meddelande = document.getElementById("meddelande").value.trim();
 
