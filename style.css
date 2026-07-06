@@ -46,8 +46,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* ===================================
    HEADER
+   (mobil-first: hamburgermeny är basläget)
    =================================== */
 #site-header {
   position: fixed;
@@ -64,7 +69,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.25rem;
 }
 
 #site-header.scrolled {
@@ -79,7 +84,7 @@ a {
 }
 
 .logo img {
-  height: 55px;
+  height: 44px;
   width: auto;
   transition: opacity var(--transition);
 }
@@ -109,7 +114,7 @@ a {
 }
 
 .menu-icon {
-  display: none;
+  display: block;
   font-size: 1.8rem;
   cursor: pointer;
   color: var(--white);
@@ -120,31 +125,42 @@ a {
   color: var(--ink);
 }
 
-/* MENY */
+/* MENY (dold som standard på mobil, öppnas via checkbox-hack) */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  border-radius: 0 0 var(--radius) var(--radius);
+  min-width: 220px;
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  display: block;
+}
+
 .menu ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.5rem 0;
+  align-items: stretch;
 }
 
 .menu a {
+  display: block;
   font-size: 1rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.03em;
+  padding: 0.75rem 1.5rem;
+  color: var(--ink) !important;
   transition: color var(--transition);
 }
 
 .menu a:hover {
-  color: var(--white);
-}
-
-#site-header.scrolled .menu a {
-  color: var(--ink-mid);
-}
-
-#site-header.scrolled .menu a:hover {
   color: var(--accent);
 }
 
@@ -154,49 +170,64 @@ a {
   padding: 0.5rem 1.25rem !important;
   border-radius: var(--radius-sm) !important;
   transition: background var(--transition) !important;
+  margin: 0.5rem 1rem !important;
+  display: block !important;
+  text-align: center !important;
 }
 
 .nav-cta:hover {
   background: var(--accent) !important;
 }
 
-/* MOBIL */
-@media (max-width: 767px) {
+@media (min-width: 768px) {
+  .header-inner {
+    padding: 1.25rem 2rem;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
   .menu-icon {
-    display: block;
+    display: none;
   }
 
   .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-lg);
-    border-radius: 0 0 var(--radius) var(--radius);
-    min-width: 220px;
-  }
-
-  #menu-toggle:checked + .menu-icon + .menu {
     display: block;
+    position: static;
+    background: none;
+    box-shadow: none;
+    min-width: 0;
   }
 
   .menu ul {
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5rem 0;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    padding: 0;
   }
 
   .menu a {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    color: var(--ink) !important;
+    display: inline;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  .menu a:hover {
+    color: var(--white);
+  }
+
+  #site-header.scrolled .menu a {
+    color: var(--ink-mid) !important;
+  }
+
+  #site-header.scrolled .menu a:hover {
+    color: var(--accent) !important;
   }
 
   .nav-cta {
-    margin: 0.5rem 1rem !important;
-    display: block !important;
-    text-align: center !important;
+    margin: 0 !important;
+    display: inline-block !important;
   }
 }
 
@@ -206,6 +237,7 @@ a {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh; /* undviker att mobilens adressfält kapar innehållet */
   display: flex;
   align-items: center;
   background: var(--ink);
@@ -231,10 +263,19 @@ a {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 8rem 2rem 4rem;
+  padding: 6.5rem 1.5rem 3rem;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Loggan som visas inne i hero-innehållet */
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 .hero-eyebrow {
@@ -260,7 +301,7 @@ a {
 }
 
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.7);
   max-width: 500px;
   margin-bottom: 2.5rem;
@@ -274,6 +315,7 @@ a {
 }
 
 .hero-deco {
+  display: none;
   position: absolute;
   right: 5%;
   top: 50%;
@@ -304,9 +346,21 @@ a {
   margin: 0 auto;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero-logo {
+    max-width: 220px;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+  }
+
   .hero-deco {
-    display: none;
+    display: block;
   }
 }
 
@@ -350,7 +404,7 @@ a {
    GEMENSAMT
    =================================== */
 .section {
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.25rem;
 }
 
 .section-alt {
@@ -364,12 +418,12 @@ a {
 
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-label {
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-dark);
@@ -391,13 +445,27 @@ a {
   margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-size: 1rem;
+  }
+}
+
 /* ===================================
    OM MIG
    =================================== */
 .om-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -441,6 +509,7 @@ a {
 .om-bild {
   display: flex;
   justify-content: center;
+  order: -1;
 }
 
 .bild-placeholder {
@@ -454,6 +523,7 @@ a {
   justify-content: center;
   overflow: hidden; /* lägg till så bilden inte läcker ut */
 }
+
 .bild-placeholder img {
   width: 100%;
   height: 100%;
@@ -463,14 +533,14 @@ a {
   display: block;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .om-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
   }
 
   .om-bild {
-    order: -1;
+    order: 0;
   }
 }
 
@@ -487,10 +557,10 @@ a {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.75rem 2rem;
+  padding: 1.5rem;
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.25rem;
   transition:
     transform var(--transition),
     box-shadow var(--transition);
@@ -503,9 +573,14 @@ a {
 
 .tjanst-ikon {
   color: var(--accent);
-  margin-bottom: 1rem;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+/* Textwrapper: gör att rubrik + text kan krympa/radbryta korrekt i flexboxen */
+.tjanst-text {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .tjanst-kort h3 {
@@ -527,6 +602,13 @@ a {
   text-decoration: underline;
 }
 
+@media (min-width: 768px) {
+  .tjanst-kort {
+    padding: 1.75rem 2rem;
+    gap: 1.5rem;
+  }
+}
+
 /* ===================================
    PROCESS
    =================================== */
@@ -539,8 +621,8 @@ a {
 .process-steg {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  padding: 2.5rem 0;
+  gap: 1.25rem;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--border);
   position: relative;
 }
@@ -551,16 +633,20 @@ a {
 
 .process-nr {
   font-family: "Playfair Display", serif;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
   flex-shrink: 0;
-  width: 80px;
+  width: 50px;
   text-align: right;
   letter-spacing: -0.02em;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.process-content {
+  min-width: 0;
 }
 
 .process-content h3 {
@@ -576,6 +662,7 @@ a {
   line-height: 1.8;
   max-width: 620px;
 }
+
 .process-lista {
   list-style: none;
   margin-top: 1rem;
@@ -600,14 +687,15 @@ a {
   top: 0.35rem;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .process-steg {
-    gap: 1.25rem;
+    gap: 2rem;
+    padding: 2.5rem 0;
   }
 
   .process-nr {
-    font-size: 2.5rem;
-    width: 50px;
+    font-size: 3.5rem;
+    width: 80px;
   }
 }
 
@@ -629,6 +717,7 @@ a {
     transform var(--transition),
     box-shadow var(--transition);
 }
+
 a.portfolio-kort {
   text-decoration: none;
   color: inherit;
@@ -642,7 +731,7 @@ a.portfolio-kort {
 
 .portfolio-bild {
   height: 200px;
-  overflow: hidden; /* lägg till */
+  overflow: hidden;
 }
 
 .portfolio-bild img {
@@ -654,9 +743,11 @@ a.portfolio-kort {
   display: block;
   transition: transform 0.4s ease;
 }
+
 .portfolio-kort:hover .portfolio-bild img {
   transform: scale(1.05); /* lätt zoom vid hover */
 }
+
 .portfolio-info {
   padding: 1.25rem;
 }
@@ -751,6 +842,7 @@ a.portfolio-kort {
   color: var(--accent);
   text-decoration: underline;
 }
+
 /* ===================================
    KONTAKTFORMULÄR
    =================================== */
@@ -760,7 +852,7 @@ a.portfolio-kort {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .field {
@@ -853,6 +945,12 @@ label[for="integritetspolicy"] a {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .form-card {
+    padding: 2rem;
+  }
+}
+
 /* ===================================
    FOOTER
    =================================== */
@@ -866,6 +964,7 @@ label[for="integritetspolicy"] a {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.3);
 }
+
 .policy-text h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.1rem;
