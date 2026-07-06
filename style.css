@@ -19,6 +19,13 @@
   --shadow: 0 2px 16px rgba(26, 26, 46, 0.08);
   --shadow-lg: 0 8px 40px rgba(26, 26, 46, 0.14);
   --transition: 0.3s ease;
+  --header-h: 76px; /* faktisk höjd på fixed headern, mobil */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 95px; /* faktisk höjd på fixed headern, desktop */
+  }
 }
 
 *,
@@ -31,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
   font-size: 16px;
 }
 
@@ -407,6 +415,12 @@ img {
   padding: 4rem 1.25rem;
 }
 
+/* Sidor utan hero (t.ex. integritetspolicy.html) har ingen buffert mot den
+   fasta headern - kompensera så första sektionens innehåll inte hamnar bakom den */
+main > .section:first-child {
+  padding-top: calc(var(--header-h) + 4rem);
+}
+
 .section-alt {
   background: var(--bg-alt);
 }
@@ -448,6 +462,10 @@ img {
 @media (min-width: 768px) {
   .section {
     padding: 6rem 1.5rem;
+  }
+
+  main > .section:first-child {
+    padding-top: calc(var(--header-h) + 6rem);
   }
 
   .section-header {

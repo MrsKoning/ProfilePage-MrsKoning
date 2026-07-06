@@ -27,16 +27,13 @@ document
         "Telefon: " +
         telefon +
         "\n" +
-        "E-post: " +
-        epost +
-        "\n\n" +
         "Meddelande:\n" +
         meddelande,
     );
 
     // Öppna mailprogrammet med allt förifyllt
     window.location.href =
-      "mailto:info@msthlm.se?subject=" + subject + "&body=" + body;
+      "mailto:evamaria.koning@gmail.com?subject=" + subject + "&body=" + body;
 
     // Visa bekräftelsemeddelande
     document.getElementById("form-success").style.display = "block";
