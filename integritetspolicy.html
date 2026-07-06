@@ -12,13 +12,21 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header id="site-header">
+    <header id="site-header" class="scrolled">
       <div class="header-inner">
-        <a href="index.html" class="logo">EMK</a>
+        <a href="index.html" class="logo">
+          <img
+            src="image/logo-pink.png"
+            alt="EM Köning logotyp"
+            class="logo-mork"
+          />
+        </a>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <nav class="menu">
           <ul>
             <li><a href="index.html">Hem</a></li>
-            <li><a href="index.html#kontakt">Kontakta mig</a></li>
+            <li><a href="index.html#kontakt" class="nav-cta">Kontakta mig</a></li>
           </ul>
         </nav>
       </div>
@@ -34,6 +42,13 @@
           </div>
 
           <article class="policy-text">
+            <a
+              href="javascript:history.back()"
+              class="btn btn-outline btn-back"
+            >
+              ← Tillbaka
+            </a>
+
             <h3>Personuppgiftsansvarig</h3>
             <p>
               Eva Maria Köning är personuppgiftsansvarig för behandlingen av
@@ -122,13 +137,6 @@
                 >evamaria.koning@gmail.com</a
               >.
             </p>
-
-            <a
-              href="javascript:history.back()"
-              class="btn btn-outline btn-back"
-            >
-              ← Tillbaka
-            </a>
           </article>
         </div>
       </section>

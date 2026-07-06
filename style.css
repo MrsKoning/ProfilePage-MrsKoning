@@ -989,3 +989,20 @@ label[for="integritetspolicy"] a {
   line-height: 1.8;
   margin-bottom: 1rem;
 }
+
+/* Tillbaka-knapp: btn-outline är gjord för mörk bakgrund (heron),
+   så vi läser om färgerna här för användning på ljus bakgrund */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ink-mid);
+  border-color: var(--border);
+  margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+  color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
