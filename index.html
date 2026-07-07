@@ -34,8 +34,8 @@
         <nav class="menu">
           <ul>
             <li><a href="#om">Om mig</a></li>
-            <li><a href="#tjanster">Tjänster</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#tjanster">Mina tjänster</a></li>
+            <li><a href="#portfolio">Projekt</a></li>
             <li><a href="#faq">Vanliga frågor</a></li>
             <li><a href="#kontakt" class="nav-cta">Kontakta mig</a></li>
           </ul>
@@ -46,28 +46,25 @@
     <main>
       <!-- HERO -->
       <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="image/video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-          <!-- <h1>Eva Maria<br /><em>Köning</em></h1> -->
-          <img
-            src="image/logo_black.png"
-            alt="EM Köning logotyp"
-            class="hero-logo"
-          />
-          <p class="hero-eyebrow">Webbdesign & Webbutveckling</p>
-          <p class="hero-sub">
-            Jag hjälper företag att skapa professionella och användarvänliga
-            webbplatser som stärker deras varumärke och driver affärer — med
-            över tjugo års erfarenhet av service, kommunikation och nu även av
-            modern webbutveckling.
-          </p>
-          <div class="hero-btns">
-            <a href="#kontakt" class="btn btn-primary">Kontakta mig</a>
+          <div class="hero-text">
+            <img src="image/logo_black.png" alt="logo" />
+            <p class="hero-eyebrow">Webbdesigner & Frontutvecklare</p>
+            <p class="hero-sub">
+              Jag hjälper små och medelstora företag att skapa moderna
+              webbplatser som stärker varumärket och genererar fler kunder.
+            </p>
+            <div class="hero-btns">
+              <a href="#portfolio" class="btn btn-primary">Se mina projekt</a>
+              <a href="#kontakt" class="btn btn-outline"
+                >Boka ett kostnadsfritt möte</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="hero-deco">
-          <div class="deco-circle"></div>
-          <div class="deco-line"></div>
         </div>
       </section>
 
@@ -76,35 +73,36 @@
         <div class="container">
           <div class="om-grid">
             <div class="om-text">
-              <span class="section-label">Om mig</span>
+              <span class="section-label">Om mig - Eva Maria Köning</span>
               <h2>Passion för design<br />och kod</h2>
               <p>
-                Med över två decenniers erfarenhet av service och kommunikation
-                har jag byggt en djup förståelse för människor — hur de tänker,
-                vad de behöver och vad som skapar förtroende. Den erfarenheten
-                är idag en av mina största styrkor som frontendutvecklare och
-                UX‑designer.
+                Bakom varje lyckad webbplats finns en förståelse för människorna
+                som ska använda den.
               </p>
               <p>
-                Jag kombinerar min bakgrund med modern teknisk kompetens inom
-                frontendutveckling, UX och digital design för att skapa
-                webbplatser som inte bara ser professionella ut, utan också
-                känns intuitiva, engagerande och lätta att använda. För mig
-                handlar webbutveckling om mer än kod och design — det handlar om
-                att skapa digitala upplevelser som gör skillnad.
+                Med över tjugo års erfarenhet inom service och kommunikation har
+                jag lärt mig att lyssna, ställa rätt frågor och hitta lösningar
+                som verkligen gör skillnad. Idag kombinerar jag den erfarenheten
+                med modern webbdesign och frontendutveckling för att skapa
+                webbplatser som både ser professionella ut och hjälper företag
+                att nå sina mål.
               </p>
               <p>
-                Jag arbetar nära varje kund för att förstå verksamheten,
-                målgruppen och varumärket. Resultatet blir skräddarsydda
-                lösningar som är genomtänkta in i minsta detalj, byggda för att
-                stärka företagets digitala närvaro och skapa långsiktigt värde.
+                Jag tror att en bra webbplats ska vara mer än snygg. Den ska
+                vara snabb, tillgänglig, mobilanpassad och enkel att använda –
+                både för dina besökare och för dig som företagare.
               </p>
-              <ul class="om-lista">
-                <li>✦ Responsiv design för alla enheter</li>
-                <li>✦ Fokus på tillgänglighet och SEO</li>
-                <li>✦ Personlig kontakt genom hela projektet</li>
-                <li>✦ Tillgängliga webbplatser enligt WCAG</li>
-              </ul>
+              <p>
+                Mitt mål är enkelt: att skapa en webbplats som representerar
+                ditt företag på bästa sätt och ger dina besökare förtroende
+                redan vid första intrycket.
+              </p>
+              <p>
+                När vi arbetar tillsammans får du inte bara en färdig hemsida.
+                Du får en personlig samarbetspartner som finns med genom hela
+                processen, från idé och design till lansering och
+                vidareutveckling.
+              </p>
             </div>
             <div class="om-bild">
               <div class="bild-placeholder">
@@ -716,7 +714,7 @@
       </div>
     </footer>
 
-    <script src="script/kontakt.js"></script>
+    <script src="./scripts/kontakt.js"></script>
     <script>
       // Sticky header
       const header = document.getElementById("site-header");
@@ -730,6 +728,7 @@
           document.getElementById("menu-toggle").checked = false;
         });
       });
+
       // Stäng övriga FAQ-items när ett nytt öppnas
       document.querySelectorAll(".faq-item").forEach((item) => {
         item.addEventListener("toggle", () => {
