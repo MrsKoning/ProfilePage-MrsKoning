@@ -168,8 +168,8 @@ img {
   transition: color var(--transition);
 }
 
-.menu a:hover {
-  color: var(--accent);
+.menu a:not(.nav-cta):hover {
+  color: var(--white);
   text-decoration: underline;
 }
 
@@ -178,14 +178,17 @@ img {
   color: var(--white) !important;
   padding: 0.5rem 1.25rem !important;
   border-radius: var(--radius-sm) !important;
-  transition: background var(--transition) !important;
+  transition: all 0.3s ease !important;
   margin: 0.5rem 1rem !important;
   display: block !important;
   text-align: center !important;
 }
 
 .nav-cta:hover {
-  background: var(--accent) !important;
+  background: var(--accent-light) !important;
+  color: var(--white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 154, 148, 0.35);
 }
 
 @media (min-width: 768px) {
@@ -220,9 +223,6 @@ img {
     display: inline;
     padding: 0;
     color: rgba(255, 255, 255, 0.85) !important;
-    text-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.45),
-      0 2px 8px rgba(0, 0, 0, 0.45);
   }
 
   .menu a:hover {
