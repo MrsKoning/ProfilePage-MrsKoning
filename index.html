@@ -653,7 +653,7 @@
           </div>
           <div class="kontakt-box">
             <div class="form-card">
-              <form id="kontakt-form">
+              <form id="kontakt-form" novalidate>
                 <div class="field">
                   <label for="foretag">Företagsnamn</label>
                   <input type="text" id="foretag" name="foretag" />
@@ -661,7 +661,7 @@
 
                 <div class="field">
                   <label for="namn">Namn <span class="req">*</span></label>
-                  <input type="text" id="namn" name="namn" required />
+                  <input type="text" id="namn" name="namn" />
                 </div>
 
                 <div class="field">
@@ -678,23 +678,19 @@
                   <label for="telefon"
                     >Telefon <span class="req">*</span></label
                   >
-                  <input type="tel" id="telefon" name="telefon" required />
+                  <input type="tel" id="telefon" name="telefon" />
                 </div>
 
                 <div class="field">
                   <label for="amne">Ämne <span class="req">*</span></label>
-                  <input type="text" id="amne" name="amne" required />
+                  <input type="text" id="amne" name="amne" />
                 </div>
 
                 <div class="field">
                   <label for="meddelande"
                     >Meddelande <span class="req">*</span></label
                   >
-                  <textarea
-                    id="meddelande"
-                    name="meddelande"
-                    required
-                  ></textarea>
+                  <textarea id="meddelande" name="meddelande"></textarea>
                 </div>
 
                 <p id="form-success" class="form-success">
@@ -706,16 +702,10 @@
                   type="checkbox"
                   name="integritetspolicy"
                   id="integritetspolicy"
-                  required
                 />
                 <label for="integritetspolicy">
                   Klicka i rutan om du godkänner vår
-                  <a
-                    href="./integritetspolicy.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >integritetspolicy</a
-                  >
+                  <a href="./integritetspolicy.html">integritetspolicy</a>
                 </label>
 
                 <button type="submit" class="btn-submit">Skicka</button>
@@ -760,6 +750,60 @@
           }
         });
       });
+
+      // Spara & återställ kontaktformulärets ifyllda data,
+      // så inget försvinner om man går till integritetspolicyn och tillbaka
+      const kontaktFormFields = [
+        "foretag",
+        "namn",
+        "orgnr",
+        "telefon",
+        "amne",
+        "meddelande",
+      ];
+      const kontaktStorageKey = "kontaktFormData";
+
+      // Återställ sparad data vid sidladdning
+      document.addEventListener("DOMContentLoaded", () => {
+        const saved = sessionStorage.getItem(kontaktStorageKey);
+        if (saved) {
+          const data = JSON.parse(saved);
+          kontaktFormFields.forEach((id) => {
+            const field = document.getElementById(id);
+            if (field && data[id]) field.value = data[id];
+          });
+          const checkbox = document.getElementById("integritetspolicy");
+          if (checkbox && data.integritetspolicy) {
+            checkbox.checked = data.integritetspolicy;
+          }
+        }
+      });
+
+      // Spara fältvärden varje gång användaren skriver något
+      kontaktFormFields.forEach((id) => {
+        const field = document.getElementById(id);
+        if (field) {
+          field.addEventListener("input", () => {
+            const data = JSON.parse(
+              sessionStorage.getItem(kontaktStorageKey) || "{}",
+            );
+            data[id] = field.value;
+            sessionStorage.setItem(kontaktStorageKey, JSON.stringify(data));
+          });
+        }
+      });
+
+      const integritetspolicyCheckbox =
+        document.getElementById("integritetspolicy");
+      if (integritetspolicyCheckbox) {
+        integritetspolicyCheckbox.addEventListener("change", () => {
+          const data = JSON.parse(
+            sessionStorage.getItem(kontaktStorageKey) || "{}",
+          );
+          data.integritetspolicy = integritetspolicyCheckbox.checked;
+          sessionStorage.setItem(kontaktStorageKey, JSON.stringify(data));
+        });
+      }
     </script>
   </body>
 </html>
