@@ -85,6 +85,24 @@ img {
   box-shadow: 0 1px 0 var(--border);
 }
 
+/* Innan scroll är headern transparent ovanpå hero-bilden. Ett eget,
+   svagt mörkt scrim (oberoende av hero-overlayns gradient) garanterar
+   att navigeringstexten alltid har tillräcklig kontrast, oavsett vad
+   som råkar synas bakom den i bilden. */
+#site-header:not(.scrolled)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.15) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
 /* LOGO */
 .logo {
   display: flex;
@@ -92,7 +110,7 @@ img {
 }
 
 .logo img {
-  height: 44px;
+  height: 52px;
   width: auto;
   transition: opacity var(--transition);
 }
@@ -193,11 +211,11 @@ img {
 
 @media (min-width: 768px) {
   .header-inner {
-    padding: 1.25rem 2rem;
+    padding: 1.1rem 2rem;
   }
 
   .logo img {
-    height: 55px;
+    height: 72px;
   }
 
   .menu-icon {
@@ -222,7 +240,8 @@ img {
   .menu a {
     display: inline;
     padding: 0;
-    color: rgba(255, 255, 255, 0.85) !important;
+    color: var(--white) !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   }
 
   .menu a:hover {
@@ -231,6 +250,7 @@ img {
 
   #site-header.scrolled .menu a {
     color: var(--ink-mid) !important;
+    text-shadow: none;
   }
 
   #site-header.scrolled .menu a:hover {
@@ -298,12 +318,21 @@ img {
   z-index: 1;
 }
 
-/* Loggan är nu fluid - skalar mjukt med skärmen istället för fasta brytpunkter */
-.hero-logo {
-  display: block;
-  width: clamp(340px, 38vw, 620px);
+/* Fristående bildmärke, placerat för sig i hero:ns övre vänstra hörn -
+   separat från hero-text så att texten kan centreras för sig i sektionen */
+.hero-brandmark {
+  position: absolute;
+  top: calc(var(--header-h) + clamp(1rem, 3vw, 2.5rem));
+  left: clamp(1.25rem, 4vw, 3rem);
+  z-index: 2;
+
+  width: clamp(220px, 22vw, 360px);
   height: auto;
-  margin-bottom: 2rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-reveal 0.9s ease forwards;
+  animation-delay: 0.05s;
 }
 
 .hero-eyebrow {
@@ -323,7 +352,7 @@ img {
 }
 
 .hero-content h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: clamp(3rem, 9vw, 6rem);
   font-weight: 700;
   line-height: 1.05;
@@ -407,9 +436,13 @@ img {
     justify-content: center;
   }
 
-  .hero-logo {
-    width: 90%;
-    max-width: 420px;
+  .hero-brandmark {
+    top: calc(var(--header-h) + 0.75rem);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 55%;
+    max-width: 260px;
   }
 }
 
@@ -503,7 +536,7 @@ main > .section:first-child {
 }
 
 .section-header h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--ink);
@@ -550,7 +583,7 @@ main > .section:first-child {
 }
 
 .om-text h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--ink);
@@ -660,7 +693,7 @@ main > .section:first-child {
 }
 
 .tjanst-kort h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 1.05rem;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -708,7 +741,7 @@ main > .section:first-child {
 }
 
 .process-nr {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent);
@@ -726,7 +759,7 @@ main > .section:first-child {
 }
 
 .process-content h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 1.2rem;
   color: var(--ink);
   margin-bottom: 0.6rem;
@@ -829,7 +862,7 @@ a.portfolio-kort {
 }
 
 .portfolio-info h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 1.05rem;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -875,7 +908,7 @@ a.portfolio-kort {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 1rem;
   color: var(--ink);
   cursor: pointer;
@@ -1042,7 +1075,7 @@ label[for="integritetspolicy"] a {
 }
 
 .policy-text h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Hahmlet", serif;
   font-size: 1.1rem;
   color: var(--ink);
   margin: 1.75rem 0 0.5rem;
